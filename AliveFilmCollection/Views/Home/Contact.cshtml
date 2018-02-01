@@ -1,0 +1,79 @@
+﻿@{
+    ViewBag.Title = "Contact";
+}
+<h2>@ViewBag.Title.</h2>
+
+<address>
+    162 Lee High Road<br />
+    London, UK<br />
+    <abbr title="Phone">P:</abbr>
+    +447532392290
+</address>
+
+<address>
+    <strong>Email:</strong>   <a href="mailto:boca_tudor@yahoo.com">boca_tudor@yahoo.com</a><br />
+</address>
+
+<div id="contactFormSection">
+    <h3>@ViewBag.TheMessage</h3>
+    <form method="post" id="contactForm">
+        <textarea name="message" id="message" maxlength="140"
+                  data-bind="value:message, valueUpdate:'input'"></textarea>
+        <input type="submit" value="Send" />
+        <span data-bind="text:charactersRemaining"></span>
+    </form>
+    <img src="~/Content/Images/GifLoader.gif" id="progressLoading" style="display:none"/>
+</div>
+
+
+                 @*// area for message remaining characters*@
+@section scripts{
+<script src="~/Scripts/knockout-3.4.2.js"></script>
+    <script>
+        function ContactViewModel() {
+            var self = this;
+            self.message = ko.observable('');
+            self.charactersRemaining = ko.computed(function () {
+                return 140 - self.message().length;
+            })
+        }
+        ko.applyBindings(new ContactViewModel());
+    </script>
+
+    <script>
+        $('#contactForm').submit(function () {
+            $('#progressLoading').show();
+            $.post('', { message: $('#message').val() })
+                .done(function (response) {
+                    setTimeout(function () { $('#contactFormSection').html(response); }, 2000);
+                });
+            return false;
+        });
+    </script>
+    }
+
+@*<form method="post">
+    <textarea name="message"></textarea>
+    <input type="submit" value="Send" />
+
+</form>
+    
+   // better way of processing a form is through AJAX *@
+
+@*<div id="contactFormSection">
+    <h3>@ViewBag.TheMessage</h3>
+    @using (Ajax.BeginForm(new AjaxOptions
+    {
+        HttpMethod = "post",
+        InsertionMode = InsertionMode.Replace,
+        UpdateTargetId = "contactFormSection"
+    }))
+    {
+        <textarea name="message"></textarea>
+        <input type="submit" value="Send" />
+    }
+</div>
+@section scripts{
+    
+<script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
+    }*@

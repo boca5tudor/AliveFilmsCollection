@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26730.16
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AliveFilmCollection", "AliveFilmCollection\AliveFilmCollection.csproj", "{A5B40D0D-84EC-41A8-AA83-7270191EBBA9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AliveFilmCollection.Tests", "AliveFilmCollection.Tests\AliveFilmCollection.Tests.csproj", "{7D034B0B-8685-4670-BDBC-B3BEA4487374}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A5B40D0D-84EC-41A8-AA83-7270191EBBA9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A5B40D0D-84EC-41A8-AA83-7270191EBBA9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A5B40D0D-84EC-41A8-AA83-7270191EBBA9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A5B40D0D-84EC-41A8-AA83-7270191EBBA9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7D034B0B-8685-4670-BDBC-B3BEA4487374}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7D034B0B-8685-4670-BDBC-B3BEA4487374}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7D034B0B-8685-4670-BDBC-B3BEA4487374}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7D034B0B-8685-4670-BDBC-B3BEA4487374}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B75E34C7-81E9-409C-A673-9CC70DB55A76}
+	EndGlobalSection
+EndGlobal
